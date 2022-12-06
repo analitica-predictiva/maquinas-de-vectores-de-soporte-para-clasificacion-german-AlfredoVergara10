@@ -200,10 +200,12 @@ def pregunta_03():
     # Importe SVC
     # Importe OneHotEncoder
     # Importe Pipeline
-    from sklearn.compose import ColumnTransformer
+    
     from sklearn.svm import SVC
     from sklearn.preprocessing import OneHotEncoder
     from sklearn.pipeline import Pipeline
+    from sklearn.compose import make_column_selector
+    from sklearn.compose import make_column_transformer
 
     # Cargue las variables.
     X_train, _, y_train, _ = pregunta_02()
@@ -222,7 +224,7 @@ def pregunta_03():
     # Cree un pipeline que contenga el columnTransformer y el modelo SVC.
     pipeline = Pipeline(
         steps=[
-            ("selector", ColumnTransformer),
+            ("columnTransformer", ColumnTransformer),
             ("svc", SVC),
         ],
     )
