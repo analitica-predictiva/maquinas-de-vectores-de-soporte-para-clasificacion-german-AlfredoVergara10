@@ -208,7 +208,7 @@ def pregunta_03():
     from sklearn.compose import make_column_transformer
 
     # Cargue las variables.
-    X_train, _, y_train, _ = pregunta_02()
+    X_train, X_test, y_train, y_test = pregunta_02()
 
     # Cree un objeto ColumnTransformer que aplique OneHotEncoder a las columnas
     # tipo texto. Use make_column_selector para seleccionar las columnas. Las
